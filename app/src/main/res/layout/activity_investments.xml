@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="investmentsVM" type="com.digitalbanking.app.modules.investments.data.viewmodel.InvestmentsVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearColumncontrast"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_100_03">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:contentInsetStart="0dp" style="@style/groupStylewhite_1">
+            <LinearLayout android:id="@+id/linearGroup13"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <LinearLayout android:id="@+id/linearGroup14"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <ImageView android:id="@+id/imageMenu"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_24pxh"
+                        android:layout_width="@dimen/_24pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_menu"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_menu"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtInvestments"
+                        android:layout_gravity="top"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{investmentsVM.investmentsModel.txtInvestments}"
+                        style="@style/txtIntersemibold20" tools:text="@string/lbl_investments"/>
+                    <ImageView android:id="@+id/imageEllipseThirtySeven"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_35pxh"
+                        android:layout_width="@dimen/_35pxh"
+                        android:scaleType="centerCrop"
+                        circular="@{true}"
+                        imageRes="@{@drawable/img_ellipse37_35x35}"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse37_35x35"/>
+                </LinearLayout>
+                <androidx.appcompat.widget.SearchView
+                    android:background="@drawable/rectangle_bg_gray_100_01_radius_20"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/searchViewGroup420"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:theme="@style/searchViewGroup420"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"
+                    app:queryHint="@string/msg_search_for_some" app:searchIcon="@drawable/img_search"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <androidx.core.widget.NestedScrollView
+            android:clipToPadding="false" android:fillViewport="true"
+            android:gravity="center_horizontal"
+            android:id="@+id/scrollViewScrollview"
+            android:layout_height="0dp" android:layout_weight="1" android:layout_width="match_parent">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearInvestments"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerListcontrast"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_15pxh}" tools:itemCount="3" tools:listitem="@layout/row_listcontrast"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtYearlyTotalInvestment"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{investmentsVM.investmentsModel.txtYearlyTotalInvestment}"
+                    style="@style/txtIntersemibold16" tools:text="@string/msg_yearly_total_in"/>
+                <LinearLayout android:id="@+id/linearRowprice"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_19pxh"
+                    android:paddingStart="@dimen/_19pxh"
+                    android:paddingTop="@dimen/_16pxv" style="@style/groupStylewhite_A700cornerRadius">
+                    <LinearLayout android:gravity="end"
+                        android:id="@+id/linearAmount"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:orientation="vertical">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPrice"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPrice}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_40_000"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPriceOne"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPriceOne}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_30_000"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPriceTwo"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPriceTwo}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_20_000"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPriceThree"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPriceThree}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_10_000"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPriceFour"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPriceFour}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_0"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearColumngroup1045"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:orientation="vertical">
+                        <ImageView android:id="@+id/imageGroup1045"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_height="@dimen/_157pxh"
+                            android:layout_width="@dimen/_232pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_group1045"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_group1045"/>
+                        <LinearLayout android:gravity="center_vertical"
+                            android:id="@+id/linearRowzipcode"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content" android:orientation="horizontal">
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcode"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcode}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2016"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeOne"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeOne}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2017"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeTwo"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeTwo}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2018"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeThree"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeThree}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2019"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeFour"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeFour}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2020"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeFive"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeFive}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2021"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtMonthlyRevenue"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{investmentsVM.investmentsModel.txtMonthlyRevenue}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_monthly_revenue"/>
+                <LinearLayout android:id="@+id/linearRowpricefive"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_19pxh"
+                    android:paddingStart="@dimen/_19pxh"
+                    android:paddingTop="@dimen/_16pxv" style="@style/groupStylewhite_A700cornerRadius">
+                    <LinearLayout android:gravity="end"
+                        android:id="@+id/linearAmount1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:orientation="vertical">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPriceFive"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPriceFive}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_40_000"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPriceSix"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPriceSix}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_30_000"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPriceSeven"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPriceSeven}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_20_000"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPriceEight"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPriceEight}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_10_000"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtPriceNine"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{investmentsVM.investmentsModel.txtPriceNine}"
+                            style="@style/txtInterregular12" tools:text="@string/lbl_0"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearColumngroup1049"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:orientation="vertical">
+                        <ImageView android:id="@+id/imageGroup1049"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_height="@dimen/_157pxh"
+                            android:layout_width="@dimen/_232pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_group1049"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_group1049"/>
+                        <LinearLayout android:gravity="center_vertical"
+                            android:id="@+id/linearRowzipcodesix"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content" android:orientation="horizontal">
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeSix"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeSix}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2016"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeSeven"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeSeven}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2017"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeEight"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeEight}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2018"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeNine"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeNine}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2019"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeTen"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeTen}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2020"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZipcodeEleven"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{investmentsVM.investmentsModel.txtZipcodeEleven}"
+                                style="@style/txtInterregular12" tools:text="@string/lbl_2021"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtMyInvestment"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{investmentsVM.investmentsModel.txtMyInvestment}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_my_investment"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerListuser"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_10pxh}" tools:itemCount="3" tools:listitem="@layout/row_listuser"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTrendingStock"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{investmentsVM.investmentsModel.txtTrendingStock}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_trending_stock"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearColumnslno"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_20pxh"
+                    android:paddingStart="@dimen/_20pxh"
+                    android:paddingTop="@dimen/_16pxv" style="@style/groupStylewhite_A700cornerRadius">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerListslno"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        itemSpace="@{@dimen/_16pxh}" tools:itemCount="6" tools:listitem="@layout/row_listslno"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

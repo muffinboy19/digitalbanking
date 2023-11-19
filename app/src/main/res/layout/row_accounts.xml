@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="accountsRowModel" type="com.digitalbanking.app.modules.accounts.data.model.AccountsRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearRowinfo"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_20pxv"
+        android:paddingEnd="@dimen/_15pxh"
+        android:paddingStart="@dimen/_15pxh"
+        android:paddingTop="@dimen/_20pxv" style="@style/groupStylewhite_A700cornerRadius">
+        <ImageButton
+            android:background="@drawable/rectangle_bg_gray_100_01_radius_22"
+            android:id="@+id/btnInfo"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_45pxh"
+            android:layout_width="@dimen/_45pxh"
+            android:paddingHorizontal="@dimen/_12pxh"
+            android:paddingVertical="@dimen/_12pxv"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_info" tools:ignore="ContentDescription"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnmybalance"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:id="@+id/txtMyBalance"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{accountsRowModel.txtMyBalance}"
+                style="@style/txtInterregular12" tools:text="@string/lbl_my_balance"/>
+            <TextView android:ellipsize="end" android:id="@+id/txtPrice"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{accountsRowModel.txtPrice}"
+                style="@style/txtIntersemibold16_2" tools:text="@string/lbl_12_750"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

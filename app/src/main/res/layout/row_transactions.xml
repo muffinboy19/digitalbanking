@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="transactionsRowModel" type="com.digitalbanking.app.modules.transactions.data.model.TransactionsRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearRowarrow"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:orientation="horizontal">
+        <ImageButton
+            android:background="@drawable/rectangle_border_red_700_radius_17"
+            android:id="@+id/btnArrow"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_35pxh"
+            android:layout_width="@dimen/_35pxh"
+            android:paddingHorizontal="@dimen/_10pxh"
+            android:paddingVertical="@dimen/_10pxv"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_arrow" tools:ignore="ContentDescription"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumntype"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end" android:id="@+id/txtType"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{transactionsRowModel.txtType}"
+                style="@style/txtIntermedium13" tools:text="@string/msg_spotify_subscri"/>
+            <TextView android:ellipsize="end" android:id="@+id/txtTime"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{transactionsRowModel.txtTime}"
+                style="@style/txtInterregular12" tools:text="@string/msg_28_jan_12_30_a"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/frameGroup2526"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtPrice"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{transactionsRowModel.txtPrice}"
+            style="@style/txtIntermedium13_1" tools:text="@string/lbl_2_500"/>
+    </LinearLayout>
+</layout>

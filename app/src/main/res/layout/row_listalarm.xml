@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listalarmRowModel" type="com.digitalbanking.app.modules.accounts.data.model.ListalarmRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearRowalarm"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:orientation="horizontal">
+        <ImageButton
+            android:background="@drawable/rectangle_bg_gray_100_01_radius_12"
+            android:id="@+id/btnAlarm"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_45pxh"
+            android:layout_width="@dimen/_45pxh"
+            android:paddingHorizontal="@dimen/_12pxh"
+            android:paddingVertical="@dimen/_12pxv"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_alarm" tools:ignore="ContentDescription"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnsubscriptiontype"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtSubscriptiontype"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listalarmRowModel.txtSubscriptiontype}"
+                style="@style/txtIntermedium14_1" tools:text="@string/msg_spotify_subscri"/>
+            <TextView android:ellipsize="end" android:id="@+id/txtDate"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{listalarmRowModel.txtDate}"
+                style="@style/txtInterregular12" tools:text="@string/lbl_25_jan_2021"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/frameGroup2552"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtPrice"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listalarmRowModel.txtPrice}"
+            style="@style/txtIntermedium12_1" tools:text="@string/lbl_150"/>
+    </LinearLayout>
+</layout>

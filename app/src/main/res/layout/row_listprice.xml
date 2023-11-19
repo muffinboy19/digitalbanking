@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listpriceRowModel" type="com.digitalbanking.app.modules.loans.data.model.ListpriceRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearRowprice"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:orientation="horizontal">
+        <TextView android:ellipsize="end" android:id="@+id/txtPrice"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listpriceRowModel.txtPrice}"
+            style="@style/txtInterregular12_1" tools:text="@string/lbl_100_000"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtPriceOne"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listpriceRowModel.txtPriceOne}"
+            style="@style/txtInterregular12_1" tools:text="@string/lbl_40_500"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/rectangle_border_indigo_500_radius_12"
+            android:ellipsize="end" android:fontFamily="@font/inter"
+            android:gravity="center" android:id="@+id/btnRepay"
+            android:layout_height="@dimen/_25pxv"
+            android:layout_width="@dimen/_70pxh"
+            android:paddingBottom="@dimen/_5pxv"
+            android:paddingEnd="@dimen/_17pxh"
+            android:paddingStart="@dimen/_17pxh"
+            android:paddingTop="@dimen/_5pxv" android:singleLine="true"
+            android:text="@string/lbl_repay" android:textAllCaps="false"
+            android:textColor="@color/indigo_500"
+            android:textFontWeight="500"
+            android:textSize="@dimen/_12pxh" android:textStyle="bold" tools:text="@string/lbl_repay"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listuserRowModel" type="com.digitalbanking.app.modules.investments.data.model.ListuserRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearRowuser"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_12pxh"
+        android:paddingVertical="@dimen/_12pxv" style="@style/groupStylewhite_2">
+        <ImageView android:id="@+id/imageUser"
+            android:layout_height="@dimen/_45pxh"
+            android:layout_width="@dimen/_45pxh"
+            android:scaleType="fitXY" android:src="@drawable/img_user"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_user"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumntype"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end" android:id="@+id/txtType"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listuserRowModel.txtType}"
+                style="@style/txtIntermedium14_1" tools:text="@string/lbl_apple_store"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtPlatform"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listuserRowModel.txtPlatform}"
+                style="@style/txtInterregular12" tools:text="@string/msg_e_commerce_mar"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/frameGroup2497"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtGrowth"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listuserRowModel.txtGrowth}"
+            style="@style/txtIntersemibold14_1" tools:text="@string/lbl_16"/>
+    </LinearLayout>
+</layout>

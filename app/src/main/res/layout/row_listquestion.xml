@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listquestionRowModel" type="com.digitalbanking.app.modules.services.data.model.ListquestionRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearRowquestion"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_12pxh"
+        android:paddingVertical="@dimen/_12pxv" style="@style/groupStylewhite_2">
+        <ImageButton
+            android:background="@drawable/rectangle_bg_gray_100_01_radius_12"
+            android:id="@+id/btnQuestion"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_45pxh"
+            android:layout_width="@dimen/_45pxh"
+            android:paddingHorizontal="@dimen/_12pxh"
+            android:paddingVertical="@dimen/_12pxv"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_question" tools:ignore="ContentDescription"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumntype"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end" android:id="@+id/txtType"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listquestionRowModel.txtType}"
+                style="@style/txtIntermedium14_1" tools:text="@string/lbl_business_loans"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtLanguage"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listquestionRowModel.txtLanguage}"
+                style="@style/txtInterregular12" tools:text="@string/msg_it_is_a_long_es"/>
+        </LinearLayout>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtViewdetailsvalue"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listquestionRowModel.txtViewdetailsvalue}"
+            style="@style/txtIntermedium12_7" tools:text="@string/lbl_view_details"/>
+    </LinearLayout>
+</layout>

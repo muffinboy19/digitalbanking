@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listslnoRowModel" type="com.digitalbanking.app.modules.investments.data.model.ListslnoRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearRowslno"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:orientation="horizontal">
+        <TextView android:ellipsize="end" android:id="@+id/txtSLNo"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listslnoRowModel.txtSLNo}"
+            style="@style/txtIntermedium12_3" tools:text="@string/lbl_sl_no"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtName"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listslnoRowModel.txtName}"
+            style="@style/txtIntermedium12_3" tools:text="@string/lbl_name"/>
+        <FrameLayout android:id="@+id/frameGroup2500"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtPrice"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listslnoRowModel.txtPrice}"
+            style="@style/txtIntermedium12_3" tools:text="@string/lbl_price"/>
+        <FrameLayout android:id="@+id/frameGroup2501"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtReturn"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listslnoRowModel.txtReturn}"
+            style="@style/txtIntermedium12_3" tools:text="@string/lbl_return"/>
+    </LinearLayout>
+</layout>

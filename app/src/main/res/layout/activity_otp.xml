@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="otpVM" type="com.digitalbanking.app.modules.otp.data.viewmodel.OtpVM"/>
+    </data>
+    <LinearLayout android:gravity="start" android:id="@+id/linearOtp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_13pxv"
+        android:paddingEnd="@dimen/_16pxh"
+        android:paddingStart="@dimen/_16pxh"
+        android:paddingTop="@dimen/_13pxv" style="@style/groupStylegray_100">
+        <ImageView android:id="@+id/imageArrowleft"
+            android:layout_height="@dimen/_24pxh"
+            android:layout_width="@dimen/_24pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_arrowleft_indigo_600"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_indigo_600"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtEnterOTP"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{otpVM.otpModel.txtEnterOTP}"
+            style="@style/txtInterbold28" tools:text="@string/lbl_enter_otp"/>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtCodehasbeensendOne"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@{otpVM.otpModel.txtCodehasbeensendOne}"
+            style="@style/txtIntermedium14" tools:text="@string/msg_code_has_been_send"/>
+        <com.mukesh.OtpView android:focusableInTouchMode="true"
+            android:id="@+id/otpViewOtpview" android:inputType="number"
+            android:itemBackground="@color/indigo_600_14"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/blue_gray_900"
+            android:textSize="@dimen/_28pxh" app:OtpItemCount="4"
+            app:OtpItemHeight="@dimen/_60pxv"
+            app:OtpItemSpacing="@dimen/_34pxh"
+            app:OtpItemWidth="@dimen/_60pxh"
+            app:OtpLineColor="@android:color/transparent" app:OtpViewType="rectangle"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/rectangle_bg_indigo_600_radius_25"
+            android:ellipsize="end" android:fontFamily="@font/inter"
+            android:gravity="center" android:id="@+id/btnContinue"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_14pxv"
+            android:paddingEnd="@dimen/_133pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_14pxv" android:singleLine="true"
+            android:text="@string/lbl_continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white_A700"
+            android:textFontWeight="400"
+            android:textSize="@dimen/_18pxh" android:textStyle="normal" tools:text="@string/lbl_continue"/>
+    </LinearLayout>
+</layout>

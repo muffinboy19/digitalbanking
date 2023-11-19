@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="creditCardsVM" type="com.digitalbanking.app.modules.creditcards.data.viewmodel.CreditCardsVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearColumnmycards"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_100_03">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:contentInsetStart="0dp" style="@style/groupStylewhite_1">
+            <LinearLayout android:id="@+id/linearGroup17"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <LinearLayout android:id="@+id/linearGroup18"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <ImageView android:id="@+id/imageMenu"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_24pxh"
+                        android:layout_width="@dimen/_24pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_menu"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_menu"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtCreditCards"
+                        android:layout_gravity="top"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{creditCardsVM.creditCardsModel.txtCreditCards}"
+                        style="@style/txtIntersemibold20" tools:text="@string/lbl_credit_cards"/>
+                    <ImageView android:id="@+id/imageEllipseThirtySeven"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_35pxh"
+                        android:layout_width="@dimen/_35pxh"
+                        android:scaleType="centerCrop"
+                        circular="@{true}"
+                        imageRes="@{@drawable/img_ellipse37_35x35}"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse37_35x35"/>
+                </LinearLayout>
+                <androidx.appcompat.widget.SearchView
+                    android:background="@drawable/rectangle_bg_gray_100_01_radius_20"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/searchViewGroup420"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:theme="@style/searchViewGroup420"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"
+                    app:queryHint="@string/msg_search_for_some" app:searchIcon="@drawable/img_search"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <androidx.core.widget.NestedScrollView
+            android:clipToPadding="false" android:fillViewport="true"
+            android:gravity="center_horizontal"
+            android:id="@+id/scrollViewScrollview"
+            android:layout_height="0dp" android:layout_weight="1" android:layout_width="match_parent">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearCreditCards"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtMyCards"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{creditCardsVM.creditCardsModel.txtMyCards}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_my_cards"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:gravity="end"
+                    android:id="@+id/recyclerListbalance"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_20pxh}" tools:itemCount="3" tools:listitem="@layout/row_listbalance2"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtCardExpenseStatistics"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{creditCardsVM.creditCardsModel.txtCardExpenseStatistics}"
+                    style="@style/txtIntersemibold16" tools:text="@string/msg_card_expense_st"/>
+                <LinearLayout
+                    android:id="@+id/linearColumngroup346chart"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_18pxv"
+                    android:paddingEnd="@dimen/_63pxh"
+                    android:paddingStart="@dimen/_63pxh"
+                    android:paddingTop="@dimen/_18pxv" style="@style/groupStylewhite_A700cornerRadius">
+                    <ImageView android:id="@+id/imageGroup346Chart"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="@dimen/_191pxh"
+                        android:layout_width="@dimen/_200pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_group346chart"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_group346chart"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:gravity="center_horizontal"
+                        android:id="@+id/recyclerListellipsethirtythree"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        itemSpace="@{@dimen/_11pxh}" tools:itemCount="2" tools:listitem="@layout/row_listellipsethirtythree"/>
+                </LinearLayout>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtCardList"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{creditCardsVM.creditCardsModel.txtCardList}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_card_list"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerListfile"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_12pxh}" tools:itemCount="3" tools:listitem="@layout/row_listfile"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtAddNewCard"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{creditCardsVM.creditCardsModel.txtAddNewCard}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_add_new_card"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearColumndescription"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_17pxv"
+                    android:paddingEnd="@dimen/_20pxh"
+                    android:paddingStart="@dimen/_20pxh"
+                    android:paddingTop="@dimen/_17pxv" style="@style/groupStylewhite_A700cornerRadius">
+                    <TextView android:id="@+id/txtDescription"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:lineSpacingExtra="@dimen/_10pxh"
+                        android:text="@{creditCardsVM.creditCardsModel.txtDescription}"
+                        style="@style/txtInterregular12" tools:text="@string/msg_credit_card_gen"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtCardType"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{creditCardsVM.creditCardsModel.txtCardType}"
+                        style="@style/txtInterregular13_1" tools:text="@string/lbl_card_type"/>
+                    <EditText
+                        android:background="@drawable/rectangle_bg_white_a700_border_teal_50_radius_10"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter"
+                        android:hint="@string/lbl_classic"
+                        android:id="@+id/etGroup572"
+                        android:inputType="text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="@dimen/_12pxv"
+                        android:paddingEnd="@dimen/_15pxh"
+                        android:paddingStart="@dimen/_15pxh"
+                        android:paddingTop="@dimen/_12pxv"
+                        android:singleLine="true"
+                        android:text="@={creditCardsVM.creditCardsModel.etGroup572Value}"
+                        android:textColor="@color/blue_gray_900"
+                        android:textColorHint="@color/blue_gray_900"
+                        android:textFontWeight="400"
+                        android:textSize="@dimen/_12pxh"
+                        android:textStyle="normal" tools:ignore="Autofill"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtNameOnCard"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{creditCardsVM.creditCardsModel.txtNameOnCard}"
+                        style="@style/txtInterregular13_1" tools:text="@string/lbl_name_on_card"/>
+                    <EditText
+                        android:background="@drawable/rectangle_bg_white_a700_border_teal_50_radius_10"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter"
+                        android:hint="@string/lbl_my_cards"
+                        android:id="@+id/etGroup572One"
+                        android:inputType="text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="@dimen/_12pxv"
+                        android:paddingEnd="@dimen/_15pxh"
+                        android:paddingStart="@dimen/_15pxh"
+                        android:paddingTop="@dimen/_12pxv"
+                        android:singleLine="true"
+                        android:text="@={creditCardsVM.creditCardsModel.etGroup572OneValue}"
+                        android:textColor="@color/blue_gray_900"
+                        android:textColorHint="@color/blue_gray_900"
+                        android:textFontWeight="400"
+                        android:textSize="@dimen/_12pxh"
+                        android:textStyle="normal" tools:ignore="Autofill"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtCardNumber"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{creditCardsVM.creditCardsModel.txtCardNumber}"
+                        style="@style/txtInterregular13_1" tools:text="@string/lbl_card_number"/>
+                    <EditText
+                        android:background="@drawable/rectangle_bg_white_a700_border_teal_50_radius_10"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter"
+                        android:hint="@string/msg"
+                        android:id="@+id/etGroup572Two"
+                        android:inputType="text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="@dimen/_12pxv"
+                        android:paddingEnd="@dimen/_15pxh"
+                        android:paddingStart="@dimen/_15pxh"
+                        android:paddingTop="@dimen/_12pxv"
+                        android:singleLine="true"
+                        android:text="@={creditCardsVM.creditCardsModel.etGroup572TwoValue}"
+                        android:textColor="@color/blue_gray_900"
+                        android:textColorHint="@color/blue_gray_900"
+                        android:textFontWeight="400"
+                        android:textSize="@dimen/_12pxh"
+                        android:textStyle="normal" tools:ignore="Autofill"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtExpirationDate"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{creditCardsVM.creditCardsModel.txtExpirationDate}"
+                        style="@style/txtInterregular13_1" tools:text="@string/lbl_expiration_date"/>
+                    <EditText
+                        android:background="@drawable/rectangle_bg_white_a700_border_teal_50_radius_10"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter"
+                        android:hint="@string/lbl_25_january_2025"
+                        android:id="@+id/etDate"
+                        android:inputType="text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="@dimen/_12pxv"
+                        android:paddingEnd="@dimen/_15pxh"
+                        android:paddingStart="@dimen/_15pxh"
+                        android:paddingTop="@dimen/_12pxv"
+                        android:singleLine="true"
+                        android:text="@={creditCardsVM.creditCardsModel.etDateValue}"
+                        android:textColor="@color/blue_gray_900"
+                        android:textColorHint="@color/blue_gray_900"
+                        android:textFontWeight="400"
+                        android:textSize="@dimen/_12pxh"
+                        android:textStyle="normal" tools:ignore="Autofill"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:background="@drawable/rectangle_bg_indigo_600_radius_9"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter"
+                        android:gravity="center"
+                        android:id="@+id/btnAddcard"
+                        android:layout_height="@dimen/_40pxv"
+                        android:layout_width="@dimen/_285pxh"
+                        android:paddingBottom="@dimen/_10pxv"
+                        android:paddingEnd="@dimen/_108pxh"
+                        android:paddingStart="@dimen/_30pxh"
+                        android:paddingTop="@dimen/_10pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_add_card"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white_A700"
+                        android:textFontWeight="500"
+                        android:textSize="@dimen/_15pxh"
+                        android:textStyle="bold" tools:text="@string/lbl_add_card"/>
+                </LinearLayout>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtCardSetting"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{creditCardsVM.creditCardsModel.txtCardSetting}"
+                    style="@style/txtIntersemibold16_3" tools:text="@string/lbl_card_setting"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearColumnfloatingicon"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_20pxh"
+                    android:paddingVertical="@dimen/_20pxv" style="@style/groupStylewhite_A700cornerRadius">
+                    <LinearLayout
+                        android:id="@+id/linearRowfloatingicon"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent" android:orientation="horizontal">
+                        <ImageView android:id="@+id/imageFloatingicon"
+                            android:layout_gravity="center_vertical"
+                            android:layout_height="@dimen/_45pxh"
+                            android:layout_width="@dimen/_45pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_floatingicon"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_floatingicon"/>
+                        <LinearLayout android:gravity="start"
+                            android:id="@+id/linearColumnblockcard"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content" android:orientation="vertical">
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtBlockCard"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:singleLine="true"
+                                android:text="@{creditCardsVM.creditCardsModel.txtBlockCard}"
+                                style="@style/txtIntermedium14_1" tools:text="@string/lbl_block_card"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtInstantlyblock"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:singleLine="true"
+                                android:text="@{creditCardsVM.creditCardsModel.txtInstantlyblock}"
+                                style="@style/txtInterregular12" tools:text="@string/msg_instantly_block"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerListlock"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        itemSpace="@{@dimen/_15pxh}" tools:itemCount="4" tools:listitem="@layout/row_listlock"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

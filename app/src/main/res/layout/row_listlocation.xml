@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listlocationRowModel" type="com.digitalbanking.app.modules.services.data.model.ListlocationRowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearRowlocation"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_20pxv"
+        android:paddingEnd="@dimen/_24pxh"
+        android:paddingStart="@dimen/_24pxh"
+        android:paddingTop="@dimen/_20pxv" style="@style/groupStylewhite_A700cornerRadius">
+        <ImageButton
+            android:background="@drawable/rectangle_bg_gray_100_01_radius_22"
+            android:id="@+id/btnLocation"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_45pxh"
+            android:layout_width="@dimen/_45pxh"
+            android:paddingHorizontal="@dimen/_12pxh"
+            android:paddingVertical="@dimen/_12pxv"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_location" tools:ignore="ContentDescription"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumntype"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end" android:id="@+id/txtType"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listlocationRowModel.txtType}"
+                style="@style/txtIntersemibold16" tools:text="@string/lbl_life_insurance"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtUnlimitedprotection"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listlocationRowModel.txtUnlimitedprotection}"
+                style="@style/txtInterregular12" tools:text="@string/msg_unlimited_prote"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

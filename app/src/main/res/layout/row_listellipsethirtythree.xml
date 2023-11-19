@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listellipsethirtythreeRowModel" type="com.digitalbanking.app.modules.creditcards.data.model.ListellipsethirtythreeRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearRowellipsethirtythree"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:orientation="horizontal">
+        <View
+            android:background="@drawable/rectangle_bg_indigo_100_radius_6"
+            android:id="@+id/viewEllipseThirtyThree"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_12pxh" android:layout_width="@dimen/_12pxh"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtDBLBank"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listellipsethirtythreeRowModel.txtDBLBank}"
+            style="@style/txtIntermedium12_6" tools:text="@string/lbl_dbl_bank"/>
+        <View
+            android:background="@drawable/rectangle_bg_indigo_500_radius_6"
+            android:id="@+id/viewEllipseThirtyFour"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_12pxh" android:layout_width="@dimen/_12pxh"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtBRCBank"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listellipsethirtythreeRowModel.txtBRCBank}"
+            style="@style/txtIntermedium12_6" tools:text="@string/lbl_brc_bank"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="getStartedVM" type="com.digitalbanking.app.modules.getstarted.data.viewmodel.GetStartedVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearColumnletsgetstartedOne"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/_16pxh"
+        android:paddingStart="@dimen/_16pxh"
+        android:paddingTop="@dimen/_119pxv" style="@style/groupStylegray_100">
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtLetsGetStartedOne"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@{getStartedVM.getStartedModel.txtLetsGetStartedOne}"
+            style="@style/txtIntersemibold28" tools:text="@string/msg_lets_get_started"/>
+        <TextView android:id="@+id/txtFindtherightandOne"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@{getStartedVM.getStartedModel.txtFindtherightandOne}"
+            style="@style/txtIntermedium14" tools:text="@string/msg_find_the_right_and"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/rectangle_bg_indigo_600_14_radius_15"
+            android:ellipsize="end" android:fontFamily="@font/inter"
+            android:gravity="center" android:id="@+id/btnLogin"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_15pxv"
+            android:paddingEnd="@dimen/_150pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_15pxv" android:singleLine="true"
+            android:text="@string/lbl_login" android:textAllCaps="false"
+            android:textColor="@color/blue_gray_400"
+            android:textFontWeight="500"
+            android:textSize="@dimen/_16pxh" android:textStyle="bold" tools:text="@string/lbl_login"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/rectangle_bg_indigo_600_14_radius_15"
+            android:ellipsize="end" android:fontFamily="@font/inter"
+            android:gravity="center" android:id="@+id/btnRegister"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_15pxv"
+            android:paddingEnd="@dimen/_139pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_15pxv" android:singleLine="true"
+            android:text="@string/lbl_register"
+            android:textAllCaps="false"
+            android:textColor="@color/blue_gray_400"
+            android:textFontWeight="500"
+            android:textSize="@dimen/_16pxh" android:textStyle="bold" tools:text="@string/lbl_register"/>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtOrUseInstantSign"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{getStartedVM.getStartedModel.txtOrUseInstantSign}"
+            style="@style/txtPoppinssemibold12" tools:text="@string/msg_or_use_instant_sign"/>
+        <LinearLayout android:id="@+id/linearRowgoogle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_9pxv"
+            android:paddingEnd="@dimen/_16pxh"
+            android:paddingStart="@dimen/_16pxh"
+            android:paddingTop="@dimen/_9pxv" style="@style/groupStylecornerRadius">
+            <ImageView android:id="@+id/imageGoogle"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/_32pxh"
+                android:layout_width="@dimen/_32pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_google_blue_a200"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_google_blue_a200"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtSignWithGoogle"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{getStartedVM.getStartedModel.txtSignWithGoogle}"
+                style="@style/txtInterbold16" tools:text="@string/msg_sign_with_google"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/linearRowuser"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_9pxv"
+            android:paddingEnd="@dimen/_16pxh"
+            android:paddingStart="@dimen/_16pxh"
+            android:paddingTop="@dimen/_9pxv" style="@style/groupStylecornerRadius">
+            <ImageView android:id="@+id/imageUser"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/_32pxh"
+                android:layout_width="@dimen/_32pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_user_blue_gray_900_01"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_user_blue_gray_900_01"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtSignWithApple"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{getStartedVM.getStartedModel.txtSignWithApple}"
+                style="@style/txtInterbold16" tools:text="@string/lbl_sign_with_apple"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

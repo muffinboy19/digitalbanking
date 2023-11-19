@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listfileRowModel" type="com.digitalbanking.app.modules.creditcards.data.model.ListfileRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearRowfile"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_12pxh"
+        android:paddingVertical="@dimen/_12pxv" style="@style/groupStylewhite_2">
+        <ImageButton
+            android:background="@drawable/rectangle_bg_gray_100_01_radius_12"
+            android:id="@+id/btnFile"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_45pxh"
+            android:layout_width="@dimen/_45pxh"
+            android:paddingHorizontal="@dimen/_12pxh"
+            android:paddingVertical="@dimen/_12pxv"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_file" tools:ignore="ContentDescription"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumncardtype"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtCardType"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listfileRowModel.txtCardType}"
+                style="@style/txtIntermedium14_1" tools:text="@string/lbl_card_type"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtCardtypevalue"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listfileRowModel.txtCardtypevalue}"
+                style="@style/txtInterregular12" tools:text="@string/lbl_secondary"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnbank"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end" android:id="@+id/txtBank"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listfileRowModel.txtBank}"
+                style="@style/txtIntermedium14_1" tools:text="@string/lbl_bank"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtBankvalue"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listfileRowModel.txtBankvalue}"
+                style="@style/txtInterregular12" tools:text="@string/lbl_dbl_bank"/>
+        </LinearLayout>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtViewdetailsvalue"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{listfileRowModel.txtViewdetailsvalue}"
+            style="@style/txtIntermedium11_2" tools:text="@string/lbl_view_details"/>
+    </LinearLayout>
+</layout>

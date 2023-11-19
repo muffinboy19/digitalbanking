@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="splashScreenVM" type="com.digitalbanking.app.modules.splashscreen.data.viewmodel.SplashScreenVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearSplashscreen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyleindigo_600">
+        <ImageView android:id="@+id/imageLogo"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_58pxh"
+            android:layout_width="@dimen/_233pxh"
+            android:scaleType="fitXY" imageRes="@{@drawable/img_logo}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_logo"/>
+    </LinearLayout>
+</layout>

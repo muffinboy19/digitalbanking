@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest package="com.digitalbanking.app" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" android:largeHeap="true"
+        android:name="com.digitalbanking.app.appcomponents.di.MyApp"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.digitalbanking.app.modules.accounts.ui.AccountsActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.newpassword.ui.NewPasswordActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.services.ui.ServicesActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.otp.ui.OtpActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.transactionstabcontainer.ui.TransactionsTabContainerActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true"
+            android:name="com.digitalbanking.app.modules.splashscreen.ui.SplashScreenActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.digitalbanking.app.modules.registers.ui.RegistersActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.loans.ui.LoansActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.getstarted.ui.GetStartedActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.home.ui.HomeActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.settingpreferencetabcontainer.ui.SettingPreferenceTabContainerActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.forgotpassword.ui.ForgotPasswordActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.login.ui.LoginActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.investments.ui.InvestmentsActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.digitalbanking.app.modules.creditcards.ui.CreditCardsActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>
